@@ -2,5 +2,6 @@
 /**/.idea
 *.iml
 *.class
+.idea/
 
 **/*/dependency-reduced-pom.xml

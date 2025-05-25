@@ -40,7 +40,7 @@ public class DwdBaseLog extends BaseApp {
     private final String PAGE = "page";
 
     public static void main(String[] args) throws Exception {
-        new DwdBaseLog().start(10002,4,"dwd_base_log", Constant.TOPIC_LOG);
+        new DwdBaseLog().start(10011,4,"dwd_base_log", Constant.TOPIC_LOG);
     }
     @Override
     public void handle(StreamExecutionEnvironment env, DataStreamSource<String> kafkaStrDS) {

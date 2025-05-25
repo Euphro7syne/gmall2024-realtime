@@ -37,7 +37,7 @@ public class DwdInteractionCommentInfo extends BaseSQLApp {
                 "\t`data`['appraise'] appraise,\n" +
                 "\t`data`['comment_txt'] comment_txt,\n" +
                 "\tts,\n" +
-                "\tproc_time\n" +
+                "\tpt\n" +
                 "from topic_db where `table`='comment_info' and `type`='insert'");
 //        commentInfo.execute().print();
         //将表对象注册到表执行环境中
@@ -57,7 +57,7 @@ public class DwdInteractionCommentInfo extends BaseSQLApp {
                 "\tcomment_txt,\n" +
                 "\tts\n" +
                 "FROM comment_info AS c\n" +
-                "  JOIN base_dic FOR SYSTEM_TIME AS OF c.proc_time AS dic\n" +
+                "  JOIN base_dic FOR SYSTEM_TIME AS OF c.pt AS dic\n" +
                 "    ON c.appraise = dic.dic_code;");
 //        joinedTable.execute().print();
         //todo 将关联的数据写到Kafka主题中                   -- upsert kafka连接器
